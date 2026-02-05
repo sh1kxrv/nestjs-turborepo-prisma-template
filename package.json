@@ -1,0 +1,37 @@
+{
+  "name": "turborepo-template",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:common": "turbo run build --filter=@repo/common",
+    "dev:api": "turbo run dev --filter=@repo/api",
+    "build:deps": "turbo run build --filter=@repo/common --filter=@repo/database",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:clean": "docker compose down -v --remove-orphans",
+    "docker:dev": "pnpm docker:dev:up",
+    "docker:dev:up": "docker compose --env-file .env.dev -f docker-compose.dev.yml up -d",
+    "docker:dev:down": "docker compose --env-file .env.dev -f docker-compose.dev.yml down",
+    "docker:dev:clean": "docker compose --env-file .env.dev -f docker-compose.dev.yml down -v --remove-orphans",
+    "init": "pnpm install && pnpm run init:db && pnpm run build:deps",
+    "init:db": "turbo run db:generate --filter=@repo/database && turbo run db:deploy --filter=@repo/database"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.8",
+    "typescript": "catalog:dev",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "prettier": "catalog:linting",
+    "prettier-plugin-organize-imports": "catalog:linting",
+    "@types/node": "catalog:dev"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

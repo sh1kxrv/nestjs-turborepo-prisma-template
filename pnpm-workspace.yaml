@@ -1,0 +1,73 @@
+packages:
+  - apps/*
+  - packages/*
+onlyBuiltDependencies:
+  - "@nestjs/core"
+  - "@prisma/engines"
+  - "@swc/core"
+  - esbuild
+  - prisma
+
+catalogs:
+  prisma:
+    prisma: ^7.3.0
+    "@prisma/adapter-pg": ^7.3.0
+    "@prisma/client": 7.3.0
+    "@prisma/client-runtime-utils": ^7.3.0
+  nest:
+    "@nestjs/common": ^11.1.12
+    "@nestjs/core": ^11.1.12
+    "@nestjs/cli": ^11.0.16
+    "@nestjs/platform-fastify": ^11.1.13
+    "@nestjs/cache-manager": ^3.1.0
+    "@nestjs/jwt": ^11.0.2
+    "@nestjs/config": ^4.0.2
+    "@nestjs/swagger": ^11.2.5
+    "@nestjs/throttler": ^6.5.0
+    "@nestjs/schematics": ^11.0.9
+    "@nestjs/testing": ^11.1.6
+  common:
+    reflect-metadata: ^0.2.2
+    rxjs: ^7.8.2
+    cache-manager: ^7.2.8
+    class-transformer: ^0.5.1
+    class-validator: ^0.14.3
+    nodemailer: ^7.0.12
+    dotenv: ^17.2.3
+    "@scalar/nestjs-api-reference": ^1.0.23
+  fastify:
+    "@fastify/cookie": 11.0.2
+    "@fastify/cors": 11.2.0
+    "@fastify/error": 4.2.0
+    "@fastify/multipart": ^9.4.0
+    "@fastify/static": ^9.0.0
+    fastify: 5.7.4
+    fastify-plugin: 5.1.0
+  infra:
+    pg: ^8.17.2
+  dev:
+    "@types/node": ^25.0.9
+    typescript: ^5.9.3
+    "@swc/cli": ^0.7.8
+    "@swc/core": ^1.13.5
+    "@types/jest": ^29.5.14
+    "@types/pg": ^8.16.0
+    globals: ^17.2.0
+  linting:
+    "@eslint/eslintrc": ^3.3.1
+    "@eslint/js": ^9.37.0
+    eslint: ^9.37.0
+    typescript-eslint: ^8.46.1
+    eslint-config-prettier: ^10.1.8
+    eslint-plugin-prettier: ^5.5.4
+    eslint-plugin-only-warn: ^1.1.0
+    eslint-plugin-turbo: ^2.5.0
+    prettier: ^3.6.2
+    prettier-plugin-organize-imports: ^4.1.0
+    prettier-plugin-sort-json: ^4.2.0
+    prettier-plugin-packagejson: ^3.0.0
+  test:
+    "@types/supertest": ^6.0.3
+    jest: ^29.7.0
+    supertest: ^7.1.4
+    ts-jest: ^29.4.5

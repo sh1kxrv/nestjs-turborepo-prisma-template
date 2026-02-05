@@ -1,0 +1,34 @@
+{
+  "name": "@repo/common",
+  "version": "0.0.0",
+  "private": true,
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:dev",
+    "tsup": "^8.5.0",
+    "typescript": "catalog:dev"
+  },
+  "dependencies": {
+    "@nestjs/config": "catalog:nest",
+    "@nestjs/common": "catalog:nest",
+    "@nestjs/core": "catalog:nest",
+    "@nestjs/swagger": "catalog:nest",
+    "class-validator": "catalog:common",
+    "dotenv": "catalog:common",
+    "reflect-metadata": "catalog:common",
+    "rxjs": "catalog:common",
+    "@prisma/adapter-pg": "catalog:prisma",
+    "@prisma/client": "catalog:prisma",
+    "@prisma/client-runtime-utils": "catalog:prisma",
+    "pg": "catalog:infra"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  }
+}

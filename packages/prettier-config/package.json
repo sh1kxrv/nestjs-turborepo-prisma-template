@@ -1,0 +1,11 @@
+{
+  "name": "@repo/prettier-config",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "main": "prettier.config.mjs",
+  "devDependencies": {
+    "prettier": "catalog:linting",
+    "prettier-plugin-organize-imports": "catalog:linting"
+  }
+}

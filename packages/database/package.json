@@ -1,0 +1,36 @@
+{
+  "name": "@repo/database",
+  "version": "0.0.0",
+  "private": true,
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev --skip-generate",
+    "db:deploy": "prisma migrate deploy"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:dev",
+    "@types/pg": "catalog:dev",
+    "prisma": "catalog:prisma",
+    "tsup": "^8.5.0",
+    "typescript": "catalog:dev"
+  },
+  "dependencies": {
+    "@nestjs/common": "catalog:nest",
+    "@nestjs/config": "catalog:nest",
+    "@prisma/adapter-pg": "catalog:prisma",
+    "@prisma/client": "catalog:prisma",
+    "@prisma/client-runtime-utils": "catalog:prisma",
+    "dotenv": "catalog:common",
+    "pg": "catalog:infra",
+    "reflect-metadata": "catalog:common"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "Repo",
+      "path": "."
+    },
+    {
+      "name": "API",
+      "path": "apps/api"
+    },
+    {
+      "name": "Library: Common",
+      "path": "packages/common"
+    },
+    {
+      "name": "Library: Database",
+      "path": "packages/database"
+    }
+  ]
+}
