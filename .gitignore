@@ -5,12 +5,16 @@ node_modules
 .pnp
 .pnp.js
 
-# Local env files
+# Local env files (root level)
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Environment files in env/ folder
+env/.env.prod
+env/.env.local
 
 # Testing
 coverage

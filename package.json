@@ -14,11 +14,17 @@
     "docker:down": "docker compose down",
     "docker:clean": "docker compose down -v --remove-orphans",
     "docker:dev": "pnpm docker:dev:up",
-    "docker:dev:up": "docker compose --env-file .env.dev -f docker-compose.dev.yml up -d",
-    "docker:dev:down": "docker compose --env-file .env.dev -f docker-compose.dev.yml down",
-    "docker:dev:clean": "docker compose --env-file .env.dev -f docker-compose.dev.yml down -v --remove-orphans",
+    "docker:dev:up": "docker compose --env-file env/.env.dev -f docker-compose.dev.yml up -d",
+    "docker:dev:down": "docker compose --env-file env/.env.dev -f docker-compose.dev.yml down",
+    "docker:dev:clean": "docker compose --env-file env/.env.dev -f docker-compose.dev.yml down -v --remove-orphans",
+    "docker:e2e": "pnpm docker:e2e:up",
+    "docker:e2e:up": "docker compose --env-file env/.env.e2e -f docker-compose.e2e.yml up -d",
+    "docker:e2e:down": "docker compose --env-file env/.env.e2e -f docker-compose.e2e.yml down",
+    "docker:e2e:clean": "docker compose --env-file env/.env.e2e -f docker-compose.e2e.yml down -v --remove-orphans",
+    "e2e:api": "turbo run test:e2e --filter=@repo/api",
     "init": "pnpm install && pnpm run init:db && pnpm run build:deps",
-    "init:db": "turbo run db:generate --filter=@repo/database && turbo run db:deploy --filter=@repo/database"
+    "init:db": "turbo run db:generate --filter=@repo/database && turbo run db:deploy --filter=@repo/database",
+    "init:db:e2e": "turbo run db:generate --filter=@repo/database && turbo run db:deploy:e2e --filter=@repo/database"
   },
   "devDependencies": {
     "turbo": "^2.5.8",

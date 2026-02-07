@@ -30,6 +30,19 @@
     },
     "db:deploy": {
       "cache": false
+    },
+    "db:deploy:e2e": {
+      "cache": false
+    },
+    "db:migrate:e2e": {
+      "cache": false,
+      "persistent": true
+    },
+    "test:e2e": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "../../env/.env.e2e"],
+      "outputs": [],
+      "cache": false
     }
   }
 }
